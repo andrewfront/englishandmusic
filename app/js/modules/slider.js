@@ -15,6 +15,13 @@ const slider = () => {
         },
         slidesPerView: 1,
     });
+    const headerGalleryContainer = document.querySelector('.headertop__swiper')
+    headerGalleryContainer.addEventListener('mouseenter', () => {
+        headerGallery.autoplay.stop()
+    })
+    headerGalleryContainer.addEventListener('mouseleave', () => {
+        headerGallery.autoplay.start()
+    })
     const mainGallery = new Swiper('.gallery__swiper', {
         loop: true,
         spaceBetween: 30,
