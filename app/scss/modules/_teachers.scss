@@ -1,0 +1,131 @@
+.teachers {
+    margin-bottom: 50px;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__accordion {
+        height: 620px;
+    }
+
+    &__status h3 {
+        font-size: 16px;
+    }
+
+    &__item--first {
+        width: 438px;
+    }
+
+    &__item--second {
+        max-width: 100%;
+        width: 673px;
+    }
+
+    &__name {
+        text-align: center;
+        margin-bottom: 12px;
+        font-size: 24px;
+        line-height: 28px;
+        @extend %bold;
+    }
+
+    &__status {
+        cursor: pointer;
+        padding: 12px 37px 12px 62px;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        line-height: 28px;
+        border: 1px solid $green;
+        transition: all 0.3s linear;
+
+        &:hover {
+            background-color: $green;
+            color: $white;
+        }
+    }
+
+    &__status:hover .teachers__cap {
+        color: $white;
+    }
+
+    &__asterisk {
+        margin-right: 21px;
+        color: $red;
+        transition: all 0.3s linear;
+    }
+
+    &__cap {
+        margin-right: 21px;
+        transition: all 0.3s linear;
+    }
+
+    &__cap {
+        margin-right: 14px;
+        color: $green;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 284px;
+        padding: 20px 57px 15px 67px;
+        background-color: $white;
+        border-right: 1px solid $green;
+        border-bottom: 1px solid $green;
+        border-left: 1px solid $green;
+        // display: none;
+    }
+
+    &__text {
+        margin-bottom: 27px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &__text:last-child {
+        margin-bottom: 0;
+    }
+
+    &__text i {
+        margin-right: 29px;
+    }
+
+    &__param {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 66px 0 69px;
+        height: 284px;
+        background-color: $white;
+        border-right: 1px solid $green;
+        border-bottom: 1px solid $green;
+        border-left: 1px solid $green;
+        max-height: 0;
+        overflow: hidden;
+        transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+    }
+
+    &__accordion li.teachers__open .teachers__param {
+        max-height: 284px;
+    }
+
+    &__accordion li.teachers__open .teachers__status {
+        background-color: $green;
+        color: $white;
+    }
+
+    &__accordion li.teachers__open .teachers__status .arrow {
+        transform: rotate(180deg);
+    }
+
+    &__accordion li.teachers__open .teachers__status .teachers__cap {
+        color: $white;
+    }
+}

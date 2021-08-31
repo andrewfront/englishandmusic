@@ -1,0 +1,52 @@
+.header {
+    padding: 40px 0 5px 0;
+    margin-bottom: 5px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .nav__link {
+        position: relative;
+        color: $black;
+        margin-right: 32px;
+        transition: all 0.3s linear;
+    }
+    .nav__link::before {
+        display: inline-block;
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: $green;
+        position: absolute;
+        right: 0px;
+        bottom: -3px;
+        transition: all 0.5s linear;
+    }
+    .nav__link:hover {
+        color: $green;
+    }
+    .nav__link:hover::before {
+        background-color: $onhover;
+        width: 100%;
+    }
+    &__btn {
+        cursor: pointer;
+        border: none;
+        padding: 17px 33px;
+        background-color: $green;
+        border-radius: 20px;
+        color: $white;
+        transition: background-color 0.3s linear;
+    }
+
+    &__btn:hover {
+        background-color: $onhover;
+    }
+}

@@ -1,0 +1,65 @@
+.headertop {
+    margin-bottom: 85px;
+    &__list {
+        margin-bottom: 29px;
+    }
+    &__link {
+        margin-bottom: 25px;
+    }
+    &__link:last-child {
+        margin-bottom: 0;
+    }
+    &__link a{
+        display: inline-block;
+        background-color: $green;
+        margin-left: 33px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: $white;
+        font-size: 16px;
+        line-height: 23px;
+        transition: all 0.3s linear;
+        &:hover {
+            background-color: $onhover;
+        }
+    }
+    &__link i {
+        width: 16px;
+        height: 16px;
+        color: $green;
+    }
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 39px;
+        @extend %bold;
+    }
+    &__title span {
+        color: $green;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__swiper {
+        max-width: 497px;
+    }
+    &__infolist {
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+    &__infolist:last-child {
+        margin-bottom: 0;
+    }
+    &__infolist i {
+width: 20px;
+height: 20px;
+color: $green;
+margin-right: 22px;
+    }
+    .asterisk {
+        color: $black;
+    }
+}
