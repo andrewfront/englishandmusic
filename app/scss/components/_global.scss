@@ -40,31 +40,7 @@ body {
     margin-left: 15px;
 }
 .gallery {
-    .swiper-pagination-bullet {
-        position: relative !important;
-        display: inline-block;
-        margin: 0 10px !important;
-        width: 10px;
-        height: 10px;
+    .swiper-scrollbar-drag {
         background-color: $green;
-        opacity: 1;
-    }
-    .swiper-pagination-bullet-active {
-        background-color: $green;
-        &::before {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 20px;
-            background-color: transparent;
-            border: 2px solid $green;
-            border-radius: 50%;
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translate(-50%);
-            margin: auto;
-            cursor: pointer;
-        }
     }
 }

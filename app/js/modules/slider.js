@@ -1,12 +1,20 @@
 import Swiper from 'swiper';
 import SwiperCore, {
     Navigation,
-    Pagination
+    Pagination,
+    Scrollbar,
+    EffectFade,
+    Lazy
 } from 'swiper/core';
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, Lazy, EffectFade]);
 const slider = () => {
     const headerGallery = new Swiper('.headertop__swiper', {
+        preloadImages: false,
         grabCursor: true,
+        effect: 'fade',
+        // fadeEffect: {
+        //     crossFade: true
+        // },
         loop: true,
         speed: 1000,
         autoplay: {
@@ -23,26 +31,17 @@ const slider = () => {
         headerGallery.autoplay.start()
     })
     const mainGallery = new Swiper('.gallery__swiper', {
+        preloadImages: false,
+        lazy: true,
+        grabCursor: true,
         loop: true,
         spaceBetween: 30,
         speed: 1000,
-        autoplay: {
-            reverseDirection: false,
-            delay: 2000,
-        },
         slidesPerView: 3,
-        pagination: {
-            el: '.gallery__pagination',
-            clickable: true
+        scrollbar: {
+            el: '.gallery__scrollbar',
         },
     });
-    const mainGalleryContainer = document.querySelector('.gallery__swiper')
-    mainGalleryContainer.addEventListener('mouseenter', () => {
-        mainGallery.autoplay.stop()
-    })
-    mainGalleryContainer.addEventListener('mouseleave', () => {
-        mainGallery.autoplay.start()
-    })
     const reviewGallery = new Swiper('.reviews__container', {
         grabCursor: true,
         loop: true,

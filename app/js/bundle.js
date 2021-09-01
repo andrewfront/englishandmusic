@@ -119,6 +119,55 @@ const accordion = () => {
 
 /***/ }),
 
+/***/ "./app/js/modules/lazy.js":
+/*!********************************!*\
+  !*** ./app/js/modules/lazy.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const lazy = () => {
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  const windowHeight = document.documentElement.clientHeight;
+  let lazyImagesPositions = [];
+
+  if (lazyImages.length > 0) {
+    lazyImages.forEach(img => {
+      if (img.dataset.src) {
+        lazyImagesPositions.push(img.getBoundingClientRect().top + pageYOffset);
+        lazyScrollCheck();
+      }
+    });
+  }
+
+  window.addEventListener('scroll', lazyScroll);
+
+  function lazyScroll() {
+    if (document.querySelectorAll('img[data-src]').length > 0) {
+      lazyScrollCheck();
+    }
+  }
+
+  function lazyScrollCheck() {
+    let imgIndex = lazyImagesPositions.findIndex(item => pageYOffset > item - windowHeight);
+
+    if (imgIndex >= 0) {
+      if (lazyImages[imgIndex].dataset.src) {
+        lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.src;
+        lazyImages[imgIndex].removeAttribute('data-src');
+      }
+
+      delete lazyImagesPositions[imgIndex];
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (lazy);
+
+/***/ }),
+
 /***/ "./app/js/modules/map.js":
 /*!*******************************!*\
   !*** ./app/js/modules/map.js ***!
@@ -181,11 +230,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Pagination"]]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_0__["Scrollbar"], swiper__WEBPACK_IMPORTED_MODULE_0__["Lazy"], swiper__WEBPACK_IMPORTED_MODULE_0__["EffectFade"]]);
 
 const slider = () => {
   const headerGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.headertop__swiper', {
+    preloadImages: false,
     grabCursor: true,
+    effect: 'fade',
+    // fadeEffect: {
+    //     crossFade: true
+    // },
     loop: true,
     speed: 1000,
     autoplay: {
@@ -202,25 +256,16 @@ const slider = () => {
     headerGallery.autoplay.start();
   });
   const mainGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.gallery__swiper', {
+    preloadImages: false,
+    lazy: true,
+    grabCursor: true,
     loop: true,
     spaceBetween: 30,
     speed: 1000,
-    autoplay: {
-      reverseDirection: false,
-      delay: 2000
-    },
     slidesPerView: 3,
-    pagination: {
-      el: '.gallery__pagination',
-      clickable: true
+    scrollbar: {
+      el: '.gallery__scrollbar'
     }
-  });
-  const mainGalleryContainer = document.querySelector('.gallery__swiper');
-  mainGalleryContainer.addEventListener('mouseenter', () => {
-    mainGallery.autoplay.stop();
-  });
-  mainGalleryContainer.addEventListener('mouseleave', () => {
-    mainGallery.autoplay.start();
   });
   const reviewGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__container', {
     grabCursor: true,
@@ -250,7 +295,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./app/js/modules/slider.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var _modules_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/map */ "./app/js/modules/map.js");
+/* harmony import */ var _modules_lazy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/lazy */ "./app/js/modules/lazy.js");
 __webpack_require__(/*! es6-promise-polyfill */ "./node_modules/es6-promise-polyfill/promise.js");
+
 
 
 
@@ -261,6 +308,7 @@ swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MOD
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  Object(_modules_lazy__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_modules_accordion__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_modules_map__WEBPACK_IMPORTED_MODULE_4__["default"])();
