@@ -1,0 +1,49 @@
+.footer {
+    &__inner {
+        padding: 15px 0 15px 0;
+        background-color: #101439;
+    }
+&__items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+line-height: 23px;
+    i {
+        color: $white;
+        margin-right: 10px;
+        transition: all 0.3s linear;
+    }
+}
+&__items a {
+    padding: 10px;
+    border-radius: 15px;
+    transition: all 0.3s linear;
+    background-color: $green;
+    &:hover {
+        background-color: $onhover;
+    }
+}
+&__items a:hover i {
+    color: $white;
+}
+&__phone {
+color: $white;
+}
+&__mail {
+    color: $white;
+}
+&__location {
+    color: $white;
+}
+&__copyright {
+    text-align: center;
+    font-size: 16px;
+    line-height: 23px;
+    color: $white;
+    i {
+        margin-left: 16px;
+        color: #F52424;
+    }
+}
+}

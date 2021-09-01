@@ -43,5 +43,12 @@ const slider = () => {
     mainGalleryContainer.addEventListener('mouseleave', () => {
         mainGallery.autoplay.start()
     })
+    const reviewGallery = new Swiper('.reviews__container', {
+        grabCursor: true,
+        loop: true,
+        speed: 1000,
+        slidesPerView: 3,
+        spaceBetween: 86,
+    });
 }
 export default slider

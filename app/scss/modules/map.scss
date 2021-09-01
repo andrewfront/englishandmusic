@@ -1,0 +1,24 @@
+.map {
+    &__title {
+        margin-bottom: 60px;
+    }
+
+    &__attributes {
+        background-color: #101439;
+        width: 100%;
+        height: 574px;
+    }
+    // [class*="copyrights-pane"] {
+    //     display: none !important;
+    // }
+    [class*="ground-pane"] {
+        filter: grayscale(1);
+    }
+    &__border {
+        margin: 30px 0 30px 0;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $black;
+    }
+}

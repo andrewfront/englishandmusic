@@ -119,6 +119,56 @@ const accordion = () => {
 
 /***/ }),
 
+/***/ "./app/js/modules/map.js":
+/*!*******************************!*\
+  !*** ./app/js/modules/map.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const map = () => {
+  let center = [45.04278584916664, 41.95538164985919];
+  ymaps.ready(init);
+
+  function init() {
+    const myMap = new ymaps.Map("map", {
+      center: center,
+      zoom: 19
+    });
+    let placemark = new ymaps.Placemark(center, {}, {
+      iconLayout: 'default#image',
+      //используем свою картинку
+      iconImageHref: 'https://cdn-icons-png.flaticon.com/512/17/17177.png',
+      iconImageSize: [40, 40],
+      iconImageOffset: [-19, -44] //отступ от центра
+
+    });
+    myMap.controls.remove('geolocationControl'); // удаляем геолокацию
+
+    myMap.controls.remove('searchControl'); // удаляем поиск
+
+    myMap.controls.remove('trafficControl'); // удаляем контроль трафика
+
+    myMap.controls.remove('typeSelector'); // удаляем тип
+
+    myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+
+    myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+
+    myMap.controls.remove('rulerControl'); // удаляем контрол правил
+
+    myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+    myMap.geoObjects.add(placemark);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (map);
+
+/***/ }),
+
 /***/ "./app/js/modules/slider.js":
 /*!**********************************!*\
   !*** ./app/js/modules/slider.js ***!
@@ -172,6 +222,13 @@ const slider = () => {
   mainGalleryContainer.addEventListener('mouseleave', () => {
     mainGallery.autoplay.start();
   });
+  const reviewGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__container', {
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+    slidesPerView: 3,
+    spaceBetween: 86
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (slider);
@@ -192,7 +249,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordion */ "./app/js/modules/accordion.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./app/js/modules/slider.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _modules_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/map */ "./app/js/modules/map.js");
 __webpack_require__(/*! es6-promise-polyfill */ "./node_modules/es6-promise-polyfill/promise.js");
+
 
 
 
@@ -204,6 +263,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   Object(_modules_accordion__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules_map__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 
 /***/ }),
