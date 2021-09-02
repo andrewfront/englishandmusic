@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "es6-promise-polyfill": "^1.2.0",
     "nodelist-foreach-polyfill": "^1.2.0",
     "swiper": "^6.8.0",

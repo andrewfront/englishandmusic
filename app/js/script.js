@@ -3,8 +3,11 @@ import 'nodelist-foreach-polyfill';
 import accordion from './modules/accordion'
 import slider from './modules/slider'
 import Swiper, { Autoplay} from 'swiper';
+import AOS from '../../node_modules/aos/dist/aos'
 import map from './modules/map'
-import lazy from './modules/lazy';
+import lazy from './modules/lazy'
+import modal from './modules/modal'
+import scroll from './modules/scroll'
 Swiper.use([Autoplay]);
 window.addEventListener('DOMContentLoaded', () => {
     'use strict'
@@ -12,4 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     accordion()
     slider()
     map()
+    modal()
+    AOS.init();
+    scroll()
 })

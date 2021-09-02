@@ -11,15 +11,15 @@
     </head>
 <body>
     <div class="wrapper">
-        <header class="header" id="header">
+        <header class="header">
     <div class="container">
         <div class="header__inner">
-            <a href="" class="header__logo"><img src="images/header/logo.png" alt="logo"></a>
+            <a href="#header" class="header__logo"><img src="images/header/logo.png" alt="logo"></a>
             <nav class="nav" id="nav">
-                <a href="#" class="nav__link" data-scroll="#features">Услуги и Цены</a>
-                <a href="#" class="nav__link" data-scroll="#works">Наши преподаватели</a>
-                <a href="#" class="nav__link" data-scroll="#our__team">Фотогалерея</a>
-                <a href="#" class="nav__link" data-scroll="#testimonials">Контакты</a>
+                <a href="#services" class="nav__link">Услуги и Цены</a>
+                <a href="#teachers" class="nav__link">Наши преподаватели</a>
+                <a href="#gallery" class="nav__link">Фотогалерея</a>
+                <a href="#contacts" class="nav__link">Контакты</a>
                 <button class="header__btn">Документы</button>
             </nav>
         </div>
@@ -56,9 +56,9 @@
     </div>
 </section>
         <main class="main">
-            <section class="services">
+            <section class="services" id="services">
     <div class="container">
-    <h2 class="global__title services__title">Услуги и Цены<i class="fab fa-servicestack"></i></h2>
+    <h2 data-aos="fade-right" data-aos-duration="1500" class="global__title services__title">Услуги и Цены<i class="fab fa-servicestack"></i></h2>
     <div class="services__inner">
         <div class="services__item">
             <img data-src="images/services/london.jpg" src="images/plug.png" alt="london" class="services__img">
@@ -113,9 +113,9 @@
 </div>
 </div>
 </section>
-            <section class="teachers">
+            <section class="teachers" id="teachers">
     <div class="container">
-        <h2 class="global__title teachers__title">Наши преподаватели<i class="fas fa-chalkboard-teacher"></i></h2>
+        <h2 data-aos="fade-left" data-aos-duration="1500" class="global__title teachers__title">Наши преподаватели<i class="fas fa-chalkboard-teacher"></i></h2>
         <div class="teachers__inner">
             <div class="teachers__item teachers__item--first">
                 <div class="teachers__name">Руководитель</div>
@@ -238,9 +238,9 @@
         </div>
     </div>
 </section>
-            <section class="gallery">
+            <section class="gallery" id="gallery">
     <div class="container">
-        <h2 class="global__title gallery__title">Фотогалерея<i class="fas fa-images"></i></h2>
+        <h2 data-aos="fade-right" data-aos-duration="1500" class="global__title gallery__title">Фотогалерея<i class="fas fa-images"></i></h2>
         <div class="gallery__swiper swiper-container">
             <div class="gallery__wrapper swiper-wrapper">
                 <div class="gallery__slide swiper-slide"><img data-src="images/gallery/img1.jpg" src="images/plug.png"  alt="gallery"></div>
@@ -334,9 +334,9 @@
         </div>
     </div>
 </div>
-            <div class="map">
+            <div class="map" id="contacts">
     <div class="container">
-<h2 class="global__title map__title">Контакты<i class="fas fa-globe-europe"></i></h2>
+<h2 data-aos="fade-left" data-aos-duration="1500" class="global__title map__title">Контакты<i class="fas fa-globe-europe"></i></h2>
 <div id="map" class="map__attributes"></div>
 <span class="map__border"></span>
     </div>
@@ -355,6 +355,50 @@
         </div>
     </div>
 </footer>
+        <div class="modal">
+    <div class="modal__dialog">
+        <div class="modal__content">
+            <div class="modal__title">
+                <div class="modal__name">Документы </div>
+                <button type="button" class="modal__close"><i class="far fa-times-circle"></i></button>
+            </div>
+            <div class="modal__info">
+            <div class="modal__document">
+                <p class="modal__docname">Лицензия Министерсва образования</p>
+                <a href="images/docs/license.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Свидетельство о государственной регистрации физического лица в качестве индивидуального предпринимателя</p>
+                <a href="images/docs/registration.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Положение о порядке оформления возникновения, приостановления и прекращения отношений</p>
+                <a href="images/docs/stopdeal.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Положение о предоставлении льгот</p>
+                <a href="images/docs/discounts.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Положение о проведении промежуточных и итоговой аттестаций</p>
+                <a href="images/docs/test.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Положение о режиме занятий</p>
+                <a href="images/docs/lessons.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Правила допуска с 01.09.2020 года</p>
+                <a href="images/docs/attend.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+            <div class="modal__document">
+                <p class="modal__docname">Правила зачисления и порядок перевода</p>
+                <a href="images/docs/transition.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
     </div>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=f0d676af-e48c-4c81-bf15-e2134be76770&lang=ru_RU">
     </script>
