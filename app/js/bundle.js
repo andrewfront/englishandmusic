@@ -312,6 +312,29 @@ const scroll = () => {
   headerLogo.addEventListener('click', () => {
     window.scrollTo(0, 0);
   });
+  const menuLinks = document.querySelectorAll('[data-scroll]');
+
+  if (menuLinks.length > 0) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', menuLinkClick);
+    });
+
+    function menuLinkClick(e) {
+      const menuLink = e.target;
+
+      if (menuLink.dataset.scroll && document.querySelector(menuLink.dataset.scroll)) {
+        const goToBlock = document.querySelector(menuLink.dataset.scroll);
+        const goToBlockValue = goToBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.header').offsetHeight;
+        window.scrollTo({
+          top: goToBlockValue,
+          behavior: 'smooth'
+        });
+        e.preventDefault();
+      }
+    }
+  }
+
+  console.log(menuLinks);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (scroll);
