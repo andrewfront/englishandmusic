@@ -26,3 +26,15 @@ font-size: 14px;
 line-height: 16px;
     }
 }
+@media (max-width: 1478px) {
+.video__inner {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.video__item {
+    margin-bottom: 20px;
+}
+.video__item:last-child {
+    margin-bottom: 0;
+}
+}

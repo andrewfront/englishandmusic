@@ -39,6 +39,5 @@ const scroll = () => {
             }
         }
     }
-    console.log(menuLinks)
 }
 export default scroll

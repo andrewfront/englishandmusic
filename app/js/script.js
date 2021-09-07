@@ -8,6 +8,7 @@ import map from './modules/map'
 import lazy from './modules/lazy'
 import modal from './modules/modal'
 import scroll from './modules/scroll'
+import burger from './modules/burger'
 Swiper.use([Autoplay]);
 window.addEventListener('DOMContentLoaded', () => {
     'use strict'
@@ -18,4 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
     modal()
     AOS.init();
     scroll()
+    burger()
 })

@@ -64,3 +64,108 @@
     animation-duration: 1s;
     z-index: 1000;
 }
+.burger {
+    display: none;
+    padding: 9px 2px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.burger__item {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #000000;
+    position: relative;
+}
+
+.burger__item:before, .burger__item:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+
+.burger__item:before {
+    top: -8px;
+}
+
+.burger__item:after {
+    bottom: -8px;
+}
+
+.burger.active .burger__item {
+    background: none;
+    animation: fadeIn;
+    animation-duration: 0.3s;
+}
+.burger.active .burger__item:before {
+    transform: rotate(45deg) translate(5px, 6px);
+    animation: fadeIn;
+    animation-duration: 0.3s;
+}
+
+.burger.active .burger__item:after {
+    transform: rotate(-45deg) translate(5px,-6px);
+    animation: fadeIn;
+    animation-duration: 0.3s;
+}
+@media (max-width: 992px) {
+    .header {
+        background-color: $white;
+        padding: 10px 0;
+        text-align: center;
+    }
+.nav {
+    transform: translateY(-500%);
+    transition: all 0.6s linear;
+    // display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $green;
+    overflow: hidden;
+    border-left: 5px solid #F9F9F9;
+    border-right: 5px solid #F9F9F9;
+}
+.seen {
+    // display: block;
+    transform: translateY(0%);
+    transition: all 0.6s linear;
+}
+.header .nav {
+    font-size: 22px;
+}
+.nav__link {
+    display: block;
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    }
+    .header .nav__link:hover {
+        color: $white;
+    }
+    .header .nav__link::before {
+        content: none;
+    }
+    .header .nav__link {
+        margin-right: 0;
+        color: $white;
+    }
+.header__btn {
+    margin: 0 auto;
+    // padding: 8px 20px;
+    display: block;
+    background-color: transparent;
+    color: $white;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.burger {
+    display: block;
+}
+}

@@ -119,6 +119,55 @@ const accordion = () => {
 
 /***/ }),
 
+/***/ "./app/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./app/js/modules/burger.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const burger = () => {
+  const burger = document.querySelector("#navToggle");
+  const nav = document.querySelector('.nav');
+  const navLink = document.querySelectorAll('.nav__link');
+  const docBtn = document.querySelector('.header__btn');
+  burger.addEventListener("click", function (event) {
+    event.preventDefault();
+    burger.classList.toggle("active");
+    nav.classList.toggle("seen");
+
+    if (nav.classList.contains('seen') && burger.classList.contains("active")) {
+      marginHeader();
+    } else {
+      marginDownHeader();
+    }
+  });
+  navLink.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('seen');
+      burger.classList.remove("active");
+    });
+  });
+  docBtn.addEventListener('click', () => {
+    nav.classList.remove('seen');
+    burger.classList.remove("active");
+  });
+
+  function marginHeader() {
+    const headerTop = document.querySelector('.headertop').style.marginTop = "350px";
+  }
+
+  function marginDownHeader() {
+    const headerTop = document.querySelector('.headertop').style.marginTop = "120px";
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (burger);
+
+/***/ }),
+
 /***/ "./app/js/modules/lazy.js":
 /*!********************************!*\
   !*** ./app/js/modules/lazy.js ***!
@@ -333,8 +382,6 @@ const scroll = () => {
       }
     }
   }
-
-  console.log(menuLinks);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (scroll);
@@ -382,19 +429,30 @@ const slider = () => {
     preloadImages: false,
     lazy: true,
     grabCursor: true,
-    loop: true,
+    loop: false,
     spaceBetween: 30,
     speed: 1000,
     slidesPerView: 3,
     scrollbar: {
       el: '.gallery__scrollbar'
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1
+      },
+      496: {
+        slidesPerView: 2
+      },
+      998: {
+        slidesPerView: 3
+      }
     }
   });
   const reviewGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__container', {
     grabCursor: true,
     loop: true,
     speed: 1000,
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 86
   });
 };
@@ -423,7 +481,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_lazy__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/lazy */ "./app/js/modules/lazy.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/modal */ "./app/js/modules/modal.js");
 /* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/scroll */ "./app/js/modules/scroll.js");
+/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/burger */ "./app/js/modules/burger.js");
 __webpack_require__(/*! es6-promise-polyfill */ "./node_modules/es6-promise-polyfill/promise.js");
+
 
 
 
@@ -445,6 +505,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_modal__WEBPACK_IMPORTED_MODULE_7__["default"])();
   _node_modules_aos_dist_aos__WEBPACK_IMPORTED_MODULE_4___default.a.init();
   Object(_modules_scroll__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_modules_burger__WEBPACK_IMPORTED_MODULE_9__["default"])();
 });
 
 /***/ }),
