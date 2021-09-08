@@ -452,8 +452,31 @@ const slider = () => {
     grabCursor: true,
     loop: true,
     speed: 1000,
-    slidesPerView: 1,
-    spaceBetween: 86
+    slidesPerView: 'auto',
+    spaceBetween: 86,
+    autoHeight: true,
+    autoplay: {
+      reverseDirection: false,
+      delay: 1500
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1
+      },
+      560: {
+        slidesPerView: 2
+      },
+      998: {
+        slidesPerView: 3
+      }
+    }
+  });
+  const reviewGalleryContainer = document.querySelector('.reviews__container');
+  reviewGalleryContainer.addEventListener('mouseenter', () => {
+    reviewGallery.autoplay.stop();
+  });
+  reviewGalleryContainer.addEventListener('mouseleave', () => {
+    reviewGallery.autoplay.start();
   });
 };
 
@@ -506,6 +529,8 @@ window.addEventListener('DOMContentLoaded', () => {
   _node_modules_aos_dist_aos__WEBPACK_IMPORTED_MODULE_4___default.a.init();
   Object(_modules_scroll__WEBPACK_IMPORTED_MODULE_8__["default"])();
   Object(_modules_burger__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  const date = document.querySelector('.date');
+  date.textContent = new Date().getFullYear();
 });
 
 /***/ }),

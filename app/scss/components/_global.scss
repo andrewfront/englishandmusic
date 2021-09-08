@@ -38,6 +38,11 @@ body {
     text-decoration: underline;
     @extend %bold;
 }
+@media (max-width: 355px) {
+    .global__title {
+        font-size: 18px;
+    }
+    }
 
 .global__title i {
     margin-left: 15px;

@@ -20,4 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     AOS.init();
     scroll()
     burger()
+    const date = document.querySelector('.date')
+    date.textContent = new Date().getFullYear()
 })

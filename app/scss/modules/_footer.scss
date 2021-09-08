@@ -47,3 +47,41 @@ color: $white;
     }
 }
 }
+@media (max-width: 755px) {
+    .footer__items {
+        margin: 20px;
+        display: block;
+    text-align: center;
+    }
+    .footer__items img {
+        margin: 0 auto 20px;
+    }
+    .footer__phone {
+        margin-right: 10px;
+    }
+    .footer__mail {
+        margin-right: 10px;
+    }
+    }
+    @media (max-width: 570px) {
+        .footer__phone {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .footer__mail {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .footer__location {
+display: block;
+width: 100%;
+        }
+        .footer__items {
+            font-size: 14px;
+        }
+        .footer__copyright {
+            font-size: 14px;
+        }
+        }

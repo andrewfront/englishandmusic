@@ -1,4 +1,5 @@
 .map {
+    overflow-x: hidden;
     &__title {
         margin-bottom: 60px;
     }
@@ -22,3 +23,9 @@
         background-color: $black;
     }
 }
+@media (max-width: 1254px) {
+    .map .map__attributes {
+        max-width: 100%;
+        height: 250px;
+    }
+    }

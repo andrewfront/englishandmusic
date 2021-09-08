@@ -58,8 +58,32 @@ const slider = () => {
                 grabCursor: true,
                 loop: true,
                 speed: 1000,
-                slidesPerView: 1,
+                slidesPerView: 'auto',
                 spaceBetween: 86,
+                autoHeight: true,
+                autoplay: {
+                    reverseDirection: false,
+                    delay: 1500,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1
+                    },
+                    560: {
+                        slidesPerView: 2
+                    },
+                    998: {
+                        slidesPerView: 3
+                    }
+
+                }
             });
+            const reviewGalleryContainer = document.querySelector('.reviews__container')
+            reviewGalleryContainer.addEventListener('mouseenter', () => {
+                reviewGallery.autoplay.stop()
+            })
+            reviewGalleryContainer.addEventListener('mouseleave', () => {
+                reviewGallery.autoplay.start()
+            })
         }
         export default slider
