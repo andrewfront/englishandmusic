@@ -67,7 +67,7 @@ const slider = () => {
                 })
             const reviewGallery = new Swiper('.reviews__container', {
                 grabCursor: true,
-                loop: true,
+                loop: false,
                 speed: 1000,
                 slidesPerView: 'auto',
                 spaceBetween: 86,

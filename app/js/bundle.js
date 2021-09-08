@@ -471,7 +471,7 @@ const slider = () => {
   });
   const reviewGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__container', {
     grabCursor: true,
-    loop: true,
+    loop: false,
     speed: 1000,
     slidesPerView: 'auto',
     spaceBetween: 86,
