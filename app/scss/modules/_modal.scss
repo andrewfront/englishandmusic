@@ -13,8 +13,6 @@
         margin: 190px auto 0;
         background-color: $white;
     }
-    &__content {
-    }
     &__title {
         font-size: 24px;
 line-height: 28px;
@@ -69,3 +67,28 @@ line-height: 28px;
 .hide {
     display: none;
 }
+@media (max-width: 575px) {
+    .modal__dialog {
+        max-width: 359px;
+        margin: 100px auto 0;
+    }
+    .modal__title {
+        padding: 15px;
+    }
+    }
+    @media (max-width: 379px) {
+        .modal__dialog {
+            max-width: 295px;
+            margin: 125px auto 0;
+        }
+        .modal__document {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .modal__document i {
+            margin-left: 3px;
+        }
+        .modal__title {
+            margin-bottom: 5px;
+        }
+        }

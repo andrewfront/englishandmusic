@@ -34,12 +34,16 @@ const slider = () => {
                 preloadImages: false,
                 lazy: true,
                 grabCursor: true,
-                loop: false,
+                loop: true,
                 spaceBetween: 30,
                     speed: 1000,
                     slidesPerView: 3,
                     scrollbar: {
                         el: '.gallery__scrollbar',
+                    },
+                    autoplay: {
+                        reverseDirection: false,
+                        delay: 1500,
                     },
                     breakpoints: {
                         320: {
@@ -54,6 +58,13 @@ const slider = () => {
 
                     }
                 });
+                const mainGalleryContainer = document.querySelector('.gallery__swiper')
+                mainGalleryContainer.addEventListener('mouseenter', () => {
+                    mainGallery.autoplay.stop()
+                })
+                mainGalleryContainer.addEventListener('mouseleave', () => {
+                    mainGallery.autoplay.start()
+                })
             const reviewGallery = new Swiper('.reviews__container', {
                 grabCursor: true,
                 loop: true,

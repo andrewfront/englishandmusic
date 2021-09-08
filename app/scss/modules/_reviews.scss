@@ -10,6 +10,7 @@
         border-radius: 10px;
         color: $white;
         font-size: 18px;
+        box-shadow: 3px 0px 5px rgb(0 0 0 / 25%);
     }
     &__content {
         padding: 10px;
@@ -46,7 +47,7 @@ transform: rotate(8.71deg);
 }
 @media (max-width: 992px) {
     .reviews {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     }
 @media (max-width: 721px) {

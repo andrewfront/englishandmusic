@@ -127,8 +127,12 @@
 }
 
 @media (max-width: 992px) {
+    .services {
+        margin-bottom: 20px;
+    }
     .services__item {
         max-width: 100%;
+        margin-bottom: 20px;
     }
 
     .services__content {
