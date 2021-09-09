@@ -1,4 +1,10 @@
 const map = () => {
+    setTimeout(function(){
+        const elem = document.createElement('script');
+        elem.type = 'text/javascript';
+        elem.src = 'https://api-maps.yandex.ru/2.1/?loadByRequire=1apikey=f0d676af-e48c-4c81-bf15-e2134be76770&lang=ru_RU';
+        document.querySelectorAll('body')[0].append(elem);
+    }, 3000);
     function createCard() {
         let center = [45.04278584916664,41.95538164985919]
         ymaps.load(init)
@@ -28,6 +34,6 @@ const map = () => {
             myMap.geoObjects.add(placemark)
         }
     }
-    setTimeout(createCard, 3000);
+    setTimeout(createCard, 4000);
 }
 export default map

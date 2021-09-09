@@ -34,7 +34,7 @@ const slider = () => {
                 preloadImages: false,
                 lazy: true,
                 grabCursor: true,
-                loop: true,
+                loop: false,
                 spaceBetween: 30,
                     speed: 1000,
                     slidesPerView: 3,
@@ -67,7 +67,7 @@ const slider = () => {
                 })
             const reviewGallery = new Swiper('.reviews__container', {
                 grabCursor: true,
-                loop: false,
+                loop: true,
                 speed: 1000,
                 slidesPerView: 'auto',
                 spaceBetween: 86,

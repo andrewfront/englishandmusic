@@ -227,6 +227,13 @@ const lazy = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const map = () => {
+  setTimeout(function () {
+    const elem = document.createElement('script');
+    elem.type = 'text/javascript';
+    elem.src = 'https://api-maps.yandex.ru/2.1/?loadByRequire=1apikey=f0d676af-e48c-4c81-bf15-e2134be76770&lang=ru_RU';
+    document.querySelectorAll('body')[0].append(elem);
+  }, 3000);
+
   function createCard() {
     let center = [45.04278584916664, 41.95538164985919];
     ymaps.load(init);
@@ -270,7 +277,7 @@ const map = () => {
     }
   }
 
-  setTimeout(createCard, 3000);
+  setTimeout(createCard, 4000);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (map);
@@ -439,7 +446,7 @@ const slider = () => {
     preloadImages: false,
     lazy: true,
     grabCursor: true,
-    loop: true,
+    loop: false,
     spaceBetween: 30,
     speed: 1000,
     slidesPerView: 3,
@@ -471,7 +478,7 @@ const slider = () => {
   });
   const reviewGallery = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__container', {
     grabCursor: true,
-    loop: false,
+    loop: true,
     speed: 1000,
     slidesPerView: 'auto',
     spaceBetween: 86,

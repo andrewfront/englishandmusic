@@ -38,6 +38,14 @@ body {
     text-decoration: underline;
     @extend %bold;
 }
+.global__title i {
+    margin-left: 15px;
+}
+.gallery {
+    .swiper-scrollbar-drag {
+        background-color: #343a40;
+    }
+}
 @media (max-width: 992px) {
     .global__title {
         margin-bottom: 20px;
@@ -49,12 +57,3 @@ body {
         font-size: 16px;
     }
     }
-
-.global__title i {
-    margin-left: 15px;
-}
-.gallery {
-    .swiper-scrollbar-drag {
-        background-color: $green;
-    }
-}
