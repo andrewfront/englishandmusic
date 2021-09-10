@@ -3,31 +3,29 @@ const burger = () => {
     const nav = document.querySelector('.nav')
     const navLink = document.querySelectorAll('.nav__link')
     const docBtn = document.querySelector('.header__btn')
+    const modal = document.querySelector('.modal')
     burger.addEventListener("click", function (event) {
         event.preventDefault()
         burger.classList.toggle("active")
         nav.classList.toggle("seen")
-        if (nav.classList.contains('seen') && burger.classList.contains("active")) {
-            marginHeader()
+        modal.classList.remove('show')
+        if (nav.classList.contains('seen')) {
+            document.body.style.overflow = 'hidden'
         } else {
-            marginDownHeader()
+            document.body.style.overflow = ''
         }
     });
     navLink.forEach(link => {
         link.addEventListener('click', () => {
             nav.classList.remove('seen')
             burger.classList.remove("active")
+            modal.classList.remove('show')
+            document.body.style.overflow = ''
         })
     })
     docBtn.addEventListener('click', () => {
         nav.classList.remove('seen')
         burger.classList.remove("active")
     })
-    function marginHeader() {
-        const headerTop = document.querySelector('.headertop').style.marginTop = "350px"
-    }
-    function marginDownHeader() {
-        const headerTop = document.querySelector('.headertop').style.marginTop = "120px"
-    }
 }
 export default burger

@@ -26,11 +26,13 @@
         <div class="header__inner">
             <a data-scroll="#header" href="#" class="header__logo"><img src="images/header/logo.png" alt="logo"></a>
             <nav class="nav" id="nav">
-                <a data-scroll="#services" href="#" class="nav__link">Услуги и Цены</a>
-                <a data-scroll="#teachers" href="#" class="nav__link">Наши преподаватели</a>
-                <a data-scroll="#gallery" href="#" class="nav__link">Фотогалерея</a>
-                <a data-scroll="#contacts" href="#" class="nav__link">Контакты</a>
-                <button class="header__btn">Документы</button>
+<ul class="nav__list">
+    <li class="nav__item"><a data-scroll="#services" href="#" class="nav__link">Услуги и Цены</a></li>
+    <li class="nav__item"><a data-scroll="#teachers" href="#" class="nav__link">Наши преподаватели</a></li>
+    <li class="nav__item"><a data-scroll="#gallery" href="#" class="nav__link">Фотогалерея</a></li>
+    <li class="nav__item"><a data-scroll="#contacts" href="#" class="nav__link">Контакты</a></li>
+    <li class="nav__item"><button class="header__btn">Документы</button></li>
+</ul>
             </nav>
             <button class="burger" type="button" id="navToggle">
                 <span class="burger__item"></span>
@@ -387,6 +389,22 @@
                             <p class="reviews__text">Cпасибо вам за первоклассное обучение английскому языку и подготовку к экзаменам! </p><i class="fas fa-heart seniors"></i>
                         </div>
                     </div>
+                    <div class="reviews__slide reviews__slide--second swiper-slide">
+                        <div class="reviews__content">
+                            <div class="reviews__info">
+                                <div class="reviews__name">Настя Ф.</div><i class="fas fa-heart seniors"></i>
+                                <div class="reviews__stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="reviews__sign"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__text">Студия English and Music очень хорошая школа! Уроки проходят интересно и насыщенно!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -410,7 +428,7 @@
             <a class="footer__mail" href="mailto:english-and-music@yandex.ru"><i class="far fa-envelope-open"></i>Электронная почта</a>
             <a class="footer__location" href="https://yandex.ru/maps/-/CCUme-BR0C"><i class="fas fa-search-location"></i>Как нас найти</a>
         </div>
-        <p class="footer__copyright">Copyright, <span class="date"></span> madeBy Andrej<i class="fas fa-heart"></i></p>
+        <p class="footer__copyright">Copyright, <span class="date"></span> madeBy | Andrej Mitin<i class="fas fa-heart"></i></p>
         </div>
     </div>
 </footer>
@@ -423,36 +441,28 @@
             </div>
             <div class="modal__info">
             <div class="modal__document">
-                <p class="modal__docname">Лицензия Министерсва образования</p>
-                <a href="images/docs/license.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/license.pdf" class="modal__download">Лицензия Министерсва образования</a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Свидетельство о государственной регистрации физического лица в качестве индивидуального предпринимателя</p>
-                <a href="images/docs/registration.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/registration.pdf" class="modal__download">Свидетельство о государственной регистрации физического лица в качестве индивидуального предпринимателя</a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Положение о порядке оформления возникновения, приостановления и прекращения отношений</p>
-                <a href="images/docs/stopdeal.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/stopdeal.pdf" class="modal__download">Положение о порядке оформления возникновения, приостановления и прекращения отношений</a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Положение о предоставлении льгот</p>
-                <a href="images/docs/discounts.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/discounts.pdf" class="modal__download">Положение о предоставлении льгот</a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Положение о проведении промежуточных и итоговой аттестаций</p>
-                <a href="images/docs/test.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/test.pdf" class="modal__download">Положение о проведении промежуточных и итоговой аттестаций</a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Положение о режиме занятий</p>
-                <a href="images/docs/lessons.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/lessons.pdf" class="modal__download">Положение о режиме занятий</i></a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Правила допуска с 01.09.2020 года</p>
-                <a href="images/docs/attend.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/attend.pdf" class="modal__download">Правила допуска с 01.09.2020 года</a>
             </div>
             <div class="modal__document">
-                <p class="modal__docname">Правила зачисления и порядок перевода</p>
-                <a href="images/docs/transition.pdf" class="modal__download"><i class="fas fa-download"></i></a>
+                <a href="images/docs/transition.pdf" class="modal__download">Правила зачисления и порядок перевода</a>
             </div>
         </div>
         </div>

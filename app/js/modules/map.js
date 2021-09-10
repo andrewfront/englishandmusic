@@ -6,7 +6,7 @@ const map = () => {
         document.querySelectorAll('body')[0].append(elem);
     }, 3000);
     function createCard() {
-        let center = [45.04278584916664,41.95538164985919]
+        let center = [45.04279508020184,41.95540914651785]
         ymaps.load(init)
         function init(){
             const myMap = new ymaps.Map("map", {

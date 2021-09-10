@@ -133,35 +133,31 @@ const burger = () => {
   const nav = document.querySelector('.nav');
   const navLink = document.querySelectorAll('.nav__link');
   const docBtn = document.querySelector('.header__btn');
+  const modal = document.querySelector('.modal');
   burger.addEventListener("click", function (event) {
     event.preventDefault();
     burger.classList.toggle("active");
     nav.classList.toggle("seen");
+    modal.classList.remove('show');
 
-    if (nav.classList.contains('seen') && burger.classList.contains("active")) {
-      marginHeader();
+    if (nav.classList.contains('seen')) {
+      document.body.style.overflow = 'hidden';
     } else {
-      marginDownHeader();
+      document.body.style.overflow = '';
     }
   });
   navLink.forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('seen');
       burger.classList.remove("active");
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
     });
   });
   docBtn.addEventListener('click', () => {
     nav.classList.remove('seen');
     burger.classList.remove("active");
   });
-
-  function marginHeader() {
-    const headerTop = document.querySelector('.headertop').style.marginTop = "350px";
-  }
-
-  function marginDownHeader() {
-    const headerTop = document.querySelector('.headertop').style.marginTop = "120px";
-  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (burger);
@@ -235,7 +231,7 @@ const map = () => {
   }, 3000);
 
   function createCard() {
-    let center = [45.04278584916664, 41.95538164985919];
+    let center = [45.04279508020184, 41.95540914651785];
     ymaps.load(init);
 
     function init() {
