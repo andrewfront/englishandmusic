@@ -237,7 +237,7 @@ const map = () => {
     function init() {
       const myMap = new ymaps.Map("map", {
         center: center,
-        zoom: 19
+        zoom: 17
       });
       let placemark = new ymaps.Placemark(center, {}, {
         iconLayout: 'default#image',
@@ -262,8 +262,7 @@ const map = () => {
       myMap.controls.remove('typeSelector'); // удаляем тип
 
       myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-
-      myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+      // myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
 
       myMap.controls.remove('rulerControl'); // удаляем контрол правил
 
