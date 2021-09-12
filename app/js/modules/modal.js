@@ -2,10 +2,14 @@ const modal = () => {
 const btn  = document.querySelector('.header__btn')
 const modal = document.querySelector('.modal')
 const closeBtn = document.querySelector('.modal__close')
+const header = document.querySelector('.header')
 let scroll = calcScroll()
 btn.addEventListener('click', () => {
     modal.classList.add('show')
     modal.classList.remove('hide')
+    if (header.classList.contains('fixed')) {
+        header.classList.remove('fixed')
+    }
     document.body.style.overflow = 'hidden'
     document.body.style.marginRight = `${scroll}px`
 })
