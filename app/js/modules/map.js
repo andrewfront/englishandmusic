@@ -13,10 +13,13 @@ const map = () => {
                 center: center,
                 zoom: 17
             });
-            let placemark = new ymaps.Placemark(center, {}, {
+            let placemark = new ymaps.Placemark(center, {
+                balloonContentHeader: 'Студия "Английский и Музыка"',
+                balloonContentBody: 'ул. Дзержинского 158, Европарк'
+            }, {
                 iconLayout: 'default#image', //используем свою картинку
-                iconImageHref: 'https://cdn-icons-png.flaticon.com/512/17/17177.png',
-                iconImageSize: [40, 40],
+                iconImageHref: 'images/pin.svg',
+                iconImageSize: [70, 70],
                 iconImageOffset: [-19, -44] //отступ от центра
             })
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
@@ -32,6 +35,7 @@ const map = () => {
             myMap.controls.remove('rulerControl'); // удаляем контрол правил
             myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
             myMap.geoObjects.add(placemark)
+            placemark.balloon.open()
         }
     }
     setTimeout(createCard, 4000);
