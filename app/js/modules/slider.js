@@ -96,5 +96,14 @@ const slider = () => {
             reviewGalleryContainer.addEventListener('mouseleave', () => {
                 reviewGallery.autoplay.start()
             })
+            const collage = new Swiper('.collage__swiper', {
+                loop: true,
+                speed: 1500,
+                effect: "fade",
+                navigation: {
+                nextEl: '.collage__swiper-button-next',
+                prevEl: '.collage__swiper-button-prev',
+                },
+            });
         }
         export default slider

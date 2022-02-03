@@ -1,5 +1,6 @@
 require ('es6-promise-polyfill');
 import 'nodelist-foreach-polyfill';
+import fslightbox from 'fslightbox';
 import accordion from './modules/accordion'
 import slider from './modules/slider'
 import Swiper, { Autoplay} from 'swiper';
